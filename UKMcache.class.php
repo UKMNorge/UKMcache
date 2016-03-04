@@ -153,7 +153,7 @@ class UKMcache {
 		}
 		switch( $view ) {
 			case 'dinmonstring':		$cache_for_minutes = 1440;/* 24h */ break;
-			case 'homepage_norge':		$cache_for_minutes = 1;				break;
+			case 'homepage_norge':		$cache_for_minutes = 10;			break;
 			case 'page':				$cache_for_minutes = 10;			break;
 			case 'post':				$cache_for_minutes = 10;			break;
 			case 'fylke':				$cache_for_minutes = 1;				break;
