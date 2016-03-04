@@ -177,18 +177,18 @@ class UKMcache {
 		return file_exists( $this->cache_dir ) && is_writeable( $this->cache_dir );
 	}
 
-	public function cache_check() {
+	public function cache_check($MESSAGES) {
 		## 04.03.16 - Lagt til av @asgeirsh da cachen ikke ble brukt pga mappefeil og vi ikke fikk beskjed.
 		## Sjekk om cache-mappen finnes og varsle i network-dash hvis ikke.
 		if(!$this->_file_cache_dir_is_writeable()) {
-			$MESSAGE[] = array(	'level' => 'alert-danger', 
+			$MESSAGES[] = array(	'level' => 'alert-danger', 
 								'module' => 'UKMcache', 
 								'header' => 'Mappen '.$this->cache_dir.' finnes ikke eller er ikke skrivbar - nettsiden vil være tregere!', 
 								'body' => 'Rett problemet med å kjøre "mkdir '.$this->cache_dir.'" og "chmod -R 777 '.$this->cache_dir.'".' 
 							);
-			return $MESSAGE;
+			return $MESSAGES;
 		}
-		return true;
+		return $MESSAGES;
 	}
 		
 	private function _file_delete( $url ) {

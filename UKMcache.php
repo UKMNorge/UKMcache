@@ -22,9 +22,9 @@ add_action( 'UKMcache_clean_url', array($UKMcache, 'clean_url'), 0, 1 );
 add_filter( 'UKMWPNETWDASH_messages', 'check_cache');
 
 # Made for external checking of cache folder availability from network dashboard.
-function check_cache() {
+function check_cache($MESSAGES) {
 	global $UKMcache;
-	return $UKMcache->cache_check();
+	return $UKMcache->cache_check($MESSAGES);
 }
 
 register_activation_hook( __FILE__, array($UKMcache, 'plugin_activate' ) );
