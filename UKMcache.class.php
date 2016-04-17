@@ -153,14 +153,14 @@ class UKMcache {
 		}
 		switch( $view ) {
 			case 'dinmonstring':		$cache_for_minutes = 1440;/* 24h */ break;
-			case 'homepage_norge':		$cache_for_minutes = 1;				break;
+			case 'homepage_norge':		$cache_for_minutes = 15;			break;
 			case 'page':				$cache_for_minutes = 10;			break;
-			case 'post':				$cache_for_minutes = 10;			break;
-			case 'fylke':				$cache_for_minutes = 1;				break;
-			case 'kommune':				$cache_for_minutes = 1;				break;
+			case 'post':				$cache_for_minutes = 15;			break;
+			case 'fylke':				$cache_for_minutes = 5;				break;
+			case 'kommune':				$cache_for_minutes = 5;				break;
 			case 'program_rekkefolge':
-			case 'program':				$cache_for_minutes = 2;				break;
-			case 'pameldte':			$cache_for_minutes = 0.5;			break;
+			case 'program':				$cache_for_minutes = 5;				break;
+			case 'pameldte':			$cache_for_minutes = 5;				break;
 			default:					$cache_for_minutes = 1;			
 										#echo 'Mangler cache-støtte for '. $view;
 																			break;
